@@ -17,3 +17,8 @@ $router->post('/register', [
     'as' => 'register',
     'uses' => 'UserController@store'
 ]);
+
+$router->put('/user/{userId}', [
+    'as' => 'user-update',
+    'uses' => 'UserController@update'
+]);
