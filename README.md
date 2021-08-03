@@ -17,7 +17,7 @@ To run it locally you must first do the following:
 1. Setup a local database
 2. Copy `.env.example` to a new file called `.env`
 3. Update the `DB_*` configs in the `.env` file to match your local database configuration
-4. Use postman, or any application of your choice to make the following requests:
+4. Use [Postman](https://www.postman.com/), or any application of your choice to make the following requests:
    1. `POST /register`
    2. `PUT /user/{user_id}`
 
