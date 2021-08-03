@@ -13,6 +13,7 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+$router->post('/register', [
+    'as' => 'register',
+    'uses' => 'UserController@store'
+]);
