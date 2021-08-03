@@ -31,4 +31,20 @@ class UserController extends Controller
 
         return response()->json(['success' => 'User created']);
     }
+
+    public function update(Request $request, $userId)
+    {
+        $request['user_id'] = $userId;
+        $this->validate($request, [
+            'opt_in' => 'required|bool',
+            'user_id' => 'required|int',
+        ]);
+
+        // update
+        $user = User::findOrFail($userId)->first();
+        $user->opt_in = $request->opt_in;
+        $user->save();
+
+        return response()->json(['success' => 'User updated']);
+    }
 }
